@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'あゆみ所見自動生成システム',
+  title: 'あゆみ所見自動生成システム - 新UI版',
   description: '小学校教員向けの総合所見自動生成システム（カリマネ準拠版）',
 }
 
