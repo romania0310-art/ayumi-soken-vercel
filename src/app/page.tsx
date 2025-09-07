@@ -154,18 +154,18 @@ export default function Home() {
   }
 
   return (
-    <div className="bg-gradient-to-br from-sky-50 via-blue-50 to-cyan-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen">
       <div className="container mx-auto p-8 max-w-4xl">
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-xl border border-sky-200 p-8">
-          <h1 className="text-3xl font-bold text-sky-700 mb-6 text-center">
-            <i className="fas fa-graduation-cap mr-3 text-cyan-500"></i>
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <h1 className="text-3xl font-bold text-blue-600 mb-6 text-center">
+            <i className="fas fa-graduation-cap mr-3 text-blue-500"></i>
             あゆみ所見自動生成システム
-            <span className="block text-sm text-sky-600 mt-2 font-normal">カリマネ準拠版</span>
+            <span className="block text-sm text-gray-600 mt-2 font-normal">カリマネ準拠版</span>
           </h1>
           
-          <div className="bg-gradient-to-r from-sky-100 to-cyan-100 p-6 rounded-xl border border-sky-200 mb-8">
-            <h2 className="text-xl font-semibold text-sky-800 mb-4">
-              <i className="fas fa-info-circle mr-2 text-cyan-600"></i>
+          <div className="bg-blue-50 p-6 rounded-lg mb-8">
+            <h2 className="text-xl font-semibold text-blue-800 mb-4">
+              <i className="fas fa-info-circle mr-2 text-blue-600"></i>
               使用方法
             </h2>
             <ol className="list-decimal list-inside space-y-2 text-gray-700">
@@ -177,8 +177,8 @@ export default function Home() {
           </div>
 
           <form className="space-y-6">
-            <div className="border-2 border-dashed border-sky-300 rounded-xl p-8 text-center hover:border-cyan-400 hover:bg-sky-50/50 transition-all duration-300 file-drop-area bg-gradient-to-br from-sky-25 to-cyan-25">
-              <i className="fas fa-cloud-upload-alt text-4xl text-sky-400 mb-4"></i>
+            <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-400 transition-colors file-drop-area">
+              <i className="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
               <input 
                 type="file" 
                 id="csvFile" 
@@ -186,23 +186,22 @@ export default function Home() {
                 className="hidden" 
                 onChange={handleFileSelect}
               />
-              <label htmlFor="csvFile" className="cursor-pointer text-lg font-medium text-sky-700 hover:text-cyan-600 transition-colors">
+              <label htmlFor="csvFile" className="cursor-pointer text-lg font-medium text-gray-700 hover:text-blue-600">
                 Excelファイルを選択してください
               </label>
-              <p className="text-sm text-sky-600 mt-2">
+              <p className="text-sm text-gray-500 mt-2">
                 対応形式: .xlsx, .xls, .csv
               </p>
               
               {selectedFile && (
                 <>
-                  <div className="mt-4 text-sm text-cyan-600 bg-cyan-50 p-3 rounded-lg">
-                    <i className="fas fa-file-excel mr-2"></i>
+                  <div className="mt-4 text-sm text-green-600">
                     選択されたファイル: {selectedFile.name} ({(selectedFile.size / 1024).toFixed(1)} KB)
                   </div>
                   <div className="mt-3">
                     <button 
                       type="button" 
-                      className="bg-slate-500 hover:bg-slate-600 text-white font-medium py-2 px-4 rounded-lg transition-colors shadow-sm"
+                      className="bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded transition-colors"
                       onClick={clearFileSelection}
                     >
                       <i className="fas fa-times mr-2"></i>
@@ -216,7 +215,7 @@ export default function Home() {
             <div className="flex justify-center space-x-4">
               <button 
                 type="button" 
-                className="bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="bg-gradient-to-b from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
                 onClick={generateSoken}
                 disabled={!selectedFile || isGenerating}
               >
@@ -228,24 +227,24 @@ export default function Home() {
 
           {isGenerated && (
             <div className="mt-8">
-              <div className="bg-gradient-to-r from-emerald-50 to-cyan-50 p-6 rounded-xl border border-emerald-200">
-                <h3 className="text-xl font-semibold text-emerald-700 mb-4">
-                  <i className="fas fa-check-circle mr-2 text-emerald-500"></i>
+              <div className="bg-green-50 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-green-800 mb-4">
+                  <i className="fas fa-check-circle mr-2"></i>
                   生成完了
                 </h3>
-                <p className="text-slate-700 mb-4">所見の自動生成が完了しました。</p>
+                <p className="text-gray-700 mb-4">所見の自動生成が完了しました。</p>
                 <div className="flex justify-center">
                   <button 
-                    className="bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    className="bg-gradient-to-b from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md"
                     onClick={downloadCSV}
                   >
                     <i className="fas fa-download mr-2"></i>
                     ダウンロード
                   </button>
                 </div>
-                <div className="mt-3 p-3 bg-sky-50 rounded-lg border border-sky-200">
-                  <p className="text-sm text-sky-700 text-center">
-                    <i className="fas fa-info-circle mr-1 text-sky-500"></i>
+                <div className="mt-3 p-3 bg-blue-50 rounded-lg">
+                  <p className="text-sm text-gray-700 text-center">
+                    <i className="fas fa-info-circle mr-1 text-blue-500"></i>
                     CSVファイル（校務システム対応）で出力されます
                   </p>
                 </div>
@@ -255,22 +254,22 @@ export default function Home() {
 
           {isGenerating && (
             <div className="mt-8 text-center">
-              <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-sky-500"></div>
-              <p className="mt-2 text-sky-600">所見を生成中です...</p>
+              <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+              <p className="mt-2 text-gray-600">所見を生成中です...</p>
             </div>
           )}
 
-          <div className="mt-12 bg-gradient-to-r from-slate-50 to-sky-50 p-6 rounded-xl border border-sky-100">
-            <h3 className="text-lg font-semibold text-slate-700 mb-4">
-              <i className="fas fa-clipboard-list mr-2 text-sky-500"></i>
+          <div className="mt-12 bg-gray-50 p-6 rounded-lg">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">
+              <i className="fas fa-clipboard-list mr-2"></i>
               システムの特徴
             </h3>
-            <ul className="space-y-3 text-slate-700">
-              <li className="flex items-center"><i className="fas fa-check text-emerald-500 mr-3"></i>カリキュラム・マネジメント要領に準拠した所見生成</li>
-              <li className="flex items-center"><i className="fas fa-check text-emerald-500 mr-3"></i>横浜市の表記ルールに完全対応</li>
-              <li className="flex items-center"><i className="fas fa-check text-emerald-500 mr-3"></i>200文字以内の適切な文字数調整</li>
-              <li className="flex items-center"><i className="fas fa-check text-emerald-500 mr-3"></i>温かみのある励ましの文面</li>
-              <li className="flex items-center"><i className="fas fa-check text-emerald-500 mr-3"></i>Vercel安定版で高い信頼性と固定URL</li>
+            <ul className="space-y-2 text-gray-700">
+              <li><i className="fas fa-check text-green-500 mr-2"></i>カリキュラム・マネジメント要領に準拠した所見生成</li>
+              <li><i className="fas fa-check text-green-500 mr-2"></i>横浜市の表記ルールに完全対応</li>
+              <li><i className="fas fa-check text-green-500 mr-2"></i>200文字以内の適切な文字数調整</li>
+              <li><i className="fas fa-check text-green-500 mr-2"></i>温かみのある励ましの文面</li>
+              <li><i className="fas fa-check text-green-500 mr-2"></i>Vercel安定版で高い信頼性と固定URL</li>
             </ul>
           </div>
         </div>
