@@ -160,7 +160,7 @@ export default function Home() {
           <h1 className="text-3xl font-bold text-blue-600 mb-6 text-center">
             <i className="fas fa-graduation-cap mr-3 text-blue-500"></i>
             あゆみ所見自動生成システム
-            <span className="block text-sm text-gray-600 mt-2 font-normal">カリマネ準拠版</span>
+            <span className="block text-sm text-gray-600 mt-2 font-normal">カリマネ準拠版 v2.0</span>
           </h1>
           
           <div className="bg-blue-50 p-6 rounded-lg mb-8">
