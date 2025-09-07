@@ -160,7 +160,7 @@ export default function Home() {
           <h1 className="text-3xl font-bold text-sky-700 mb-6 text-center">
             <i className="fas fa-graduation-cap mr-3 text-cyan-500"></i>
             あゆみ所見自動生成システム
-            <span className="block text-sm text-sky-600 mt-2 font-normal">カリマネ準拠版（Vercel安定版）</span>
+            <span className="block text-sm text-sky-600 mt-2 font-normal">カリマネ準拠版</span>
           </h1>
           
           <div className="bg-gradient-to-r from-sky-100 to-cyan-100 p-6 rounded-xl border border-sky-200 mb-8">
