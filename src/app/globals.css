@@ -4,6 +4,45 @@
 
 /* あゆみ所見自動生成システム用スタイル */
 
+/* 強制的な青系デザイン適用 */
+body {
+  background-color: #f9fafb !important;
+}
+
+.container > div {
+  background-color: white !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 8px !important;
+}
+
+h1 {
+  color: #2563eb !important;
+}
+
+h1 i {
+  color: #3b82f6 !important;
+}
+
+.bg-blue-50 {
+  background-color: #eff6ff !important;
+}
+
+.text-blue-800 {
+  color: #1e40af !important;
+}
+
+.text-blue-600 {
+  color: #2563eb !important;
+}
+
+.from-blue-500 {
+  background: linear-gradient(to bottom, #3b82f6, #2563eb) !important;
+}
+
+.hover\\:from-blue-600:hover {
+  background: linear-gradient(to bottom, #2563eb, #1d4ed8) !important;
+}
+
 .container {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
